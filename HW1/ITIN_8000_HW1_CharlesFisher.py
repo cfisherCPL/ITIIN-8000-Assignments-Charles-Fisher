@@ -2,8 +2,9 @@
 # datetime module import is an option, yeah?
 from datetime import datetime
 
-# prompt the user to input their name when they write their code
+# prompt the user to input their name when they start the code
 username = input ("Please input your name, and press RETURN: ")
+
 # get today's timestamp
 today = datetime.now()
 # print(today)
@@ -17,7 +18,7 @@ month_name = today.strftime('%B')  # Laternote: keep track of your %format marke
 # extract day of month as a number
 # day_number = today.day
 day_number = 10
-print(day_number)
+# print(day_number)
 
 # if the day is 1, 21, or 31, define suffix variable as st
 # if 2 or 22 set as nd
@@ -33,7 +34,7 @@ elif day_number == 3 or day_number == 23: \
 else:
     suffix = "th"
 
-print(suffix)
+# print(suffix)
 
 # Extract the year as a number from today's date
 year_number = today.year
