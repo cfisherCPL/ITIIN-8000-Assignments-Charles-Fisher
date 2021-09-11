@@ -22,7 +22,7 @@ print(day_number)
 # if 3 or 23 set as rd
 # otherwise set as th
 
-if day_number == 1 or day_number == 21 or day_number == 31:
+if day_number == 1 or day_number == 21 or day_number == 31:  # early bug: can't just do 1 or 21 or 31 without individual ==
     suffix = "st"
 elif day_number == 2 or day_number == 22:
     suffix = "nd"
@@ -46,9 +46,9 @@ else:
     day_type = "odd"
 
 # print the hello statement as defined below:
-# “Hello. Todays Date is [Month Name] [Day Number][th/nd/st/rd] of [Year].
+# “Hello. Today's Date is [Month Name] [Day Number][th/nd/st/rd] of [Year].
 # # The product of the month and day is [Month Number * Day], which is an [Odd/Even] number.
-print('Hello. Todays date is', month_name, str(day_number) + suffix, 'of',
+print('Hello. Today\'s date is', month_name, str(day_number) + suffix, 'of',
       str(year_number) + '. The product of the month and day is', str(today.month * day_number), 'which is an',
       day_type, 'number.')
 
