@@ -2,6 +2,8 @@
 # datetime module import is an option, yeah?
 from datetime import datetime
 
+# prompt the user to input their name when they write their code
+username = input ("Please input your name, and press RETURN: ")
 # get today's timestamp
 today = datetime.now()
 # print(today)
@@ -48,7 +50,7 @@ else:
 # print the hello statement as defined below:
 # “Hello. Today's Date is [Month Name] [Day Number][th/nd/st/rd] of [Year].
 # # The product of the month and day is [Month Number * Day], which is an [Odd/Even] number.
-print('Hello. Today\'s date is', month_name, str(day_number) + suffix, 'of',
+print('Hello ' + username + ". " 'Today\'s date is', month_name, str(day_number) + suffix, 'of',
       str(year_number) + '. The product of the month and day is', str(today.month * day_number), 'which is an',
       day_type, 'number.')
 
