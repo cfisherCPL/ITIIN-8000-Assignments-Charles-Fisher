@@ -16,9 +16,9 @@ today = datetime.now()
 month_name = today.strftime('%B')  # Laternote: keep track of your %format marker
 
 # extract day of month as a number
-# day_number = today.day
-day_number = 10
-# print(day_number)
+day_number = today.day  # bug: commented out for testing to count to 10
+# day_number = 10  # bug: used for testing the counting feature early in the month.
+# print(day_number)  # used for testing with above hardcode day number.
 
 # if the day is 1, 21, or 31, define suffix variable as st
 # if 2 or 22 set as nd
