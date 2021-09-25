@@ -28,7 +28,7 @@ class MenuFull:
         self.Desserts.add_item('Flan')
         self.Desserts.add_item('Creme-Brulee')
         self.Desserts.add_item('Chocolate-Mouse')
-        self.Desserts.add_item('Cheese-Cake')
+        self.Desserts.add_item('Cheesecake')
     
     # full menu is printed
     def read_menu(self):
