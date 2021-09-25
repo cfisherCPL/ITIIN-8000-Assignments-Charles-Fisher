@@ -104,7 +104,7 @@ while cafeopen:
                 x.casefold()
                 if x=='chicken' or x=='beef' or x=='vegetarian':
                     menu.Entrees.check_order(x)
-                elif x=='soup' or x=='salad:':
+                elif x=='soup' or x=='salad':
                     menu.Sides.check_order(x)
                 elif x=='pinot-noir' or x=='chardonnay' or x=='merlot' or x=='rose':
                     menu.Wines.check_order(x)
