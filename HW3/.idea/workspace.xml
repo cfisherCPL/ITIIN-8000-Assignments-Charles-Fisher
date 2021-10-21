@@ -1,16 +1,15 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="16cf07a5-43f9-4e48-97c0-89b322c867d9" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../HW3/main.py" afterDir="false" />
+    <list default="true" id="7736f02c-12e5-4b78-a59c-71429684f0d3" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/HW3 FlowChart and Architecture.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/ITIN 8000 HW3 - Reflection.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
-  </component>
-  <component name="ExportToHTMLSettings">
-    <option name="OUTPUT_DIRECTORY" value="$PROJECT_DIR$/exportToHTML" />
   </component>
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
@@ -22,15 +21,7 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
   </component>
-  <component name="GitSEFilterConfiguration">
-    <file-type-list>
-      <filtered-out-file-type name="LOCAL_BRANCH" />
-      <filtered-out-file-type name="REMOTE_BRANCH" />
-      <filtered-out-file-type name="TAG" />
-      <filtered-out-file-type name="COMMIT_BY_MESSAGE" />
-    </file-type-list>
-  </component>
-  <component name="ProjectId" id="1yTRbkpmtO3j1Vryvjw9qys37RZ" />
+  <component name="ProjectId" id="1zEPz0ieGLcWEv983WpVhvnpKcY" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true">
     <ConfirmationsSetting value="2" id="Add" />
   </component>
@@ -45,21 +36,21 @@
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
   </component>
-  <component name="RunManager" selected="Python.HW2-Main">
-    <configuration name="HW2 - Current" type="PythonConfigurationType" factoryName="Python">
+  <component name="RunManager" selected="Python.TestRun">
+    <configuration name="TestRun" type="PythonConfigurationType" factoryName="Python">
+      <module name="HW3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Documents/GitHub/ITIN8000_FA21/HW2/bin/python" />
+      <option name="SDK_HOME" value="$USER_HOME$/Documents/GitHub/ITIN8000_FA21/HW3/bin/python" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="false" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/MenuFull.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw3part2.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -68,20 +59,20 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="HW2-Main" type="PythonConfigurationType" factoryName="Python">
+    <configuration name="hw3part1" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
+      <module name="HW3" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
       <envs>
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
-      <option name="SDK_HOME" value="$USER_HOME$/Documents/GitHub/ITIN8000_FA21/HW2/bin/python" />
+      <option name="SDK_HOME" value="" />
       <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
-      <option name="IS_MODULE_SDK" value="false" />
+      <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
-      <module name="" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/hw3part1.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -91,28 +82,27 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.HW2 - Current" />
-      <item itemvalue="Python.HW2-Main" />
+      <item itemvalue="Python.hw3part1" />
+      <item itemvalue="Python.TestRun" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
     <task active="true" id="Default" summary="Default task">
-      <changelist id="16cf07a5-43f9-4e48-97c0-89b322c867d9" name="Changes" comment="" />
-      <created>1632273664860</created>
+      <changelist id="7736f02c-12e5-4b78-a59c-71429684f0d3" name="Changes" comment="" />
+      <created>1633710532932</created>
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
-      <updated>1632273664860</updated>
-      <workItem from="1632273667600" duration="1854000" />
-      <workItem from="1632351140367" duration="1489000" />
-      <workItem from="1632510375233" duration="595000" />
-      <workItem from="1632526455285" duration="16634000" />
-      <workItem from="1632546381358" duration="491000" />
-      <workItem from="1632588608456" duration="456000" />
-      <workItem from="1632779207793" duration="276000" />
-      <workItem from="1632783558353" duration="244000" />
-      <workItem from="1632956140032" duration="245000" />
-      <workItem from="1633710452574" duration="101000" />
+      <updated>1633710532932</updated>
+      <workItem from="1633710536404" duration="28000" />
+      <workItem from="1633710570486" duration="18000" />
+      <workItem from="1633710611466" duration="657000" />
+      <workItem from="1633891577425" duration="274000" />
+      <workItem from="1633988301275" duration="1194000" />
+      <workItem from="1634085062403" duration="544000" />
+      <workItem from="1634690976738" duration="3829000" />
+      <workItem from="1634740173968" duration="7426000" />
+      <workItem from="1634831365360" duration="5936000" />
     </task>
     <servers />
   </component>
@@ -134,8 +124,20 @@
   <component name="VcsManagerConfiguration">
     <option name="ADD_EXTERNAL_FILES_SILENTLY" value="true" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <line>8</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
-    <SUITE FILE_PATH="coverage/HW2$HW2___Current.coverage" NAME="HW2 - Current Coverage Results" MODIFIED="1632533517108" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
-    <SUITE FILE_PATH="coverage/HW2$HW2_Main.coverage" NAME="HW2-Main Coverage Results" MODIFIED="1632779380205" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HW3$TestRun.coverage" NAME="TestRun Coverage Results" MODIFIED="1634835514891" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HW3$main.coverage" NAME="main Coverage Results" MODIFIED="1633710667687" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/HW3$hw3part1.coverage" NAME="hw3part1 Coverage Results" MODIFIED="1634835504696" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
