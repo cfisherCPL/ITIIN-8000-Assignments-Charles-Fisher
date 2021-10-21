@@ -33,7 +33,8 @@ bday = date(yearBorn, monthBorn, dayBorn)
 today = date.today()
 
 dateDif = today - bday
-print('Days old = ' + str(dateDif.days))
+# print('Days old = ' + str(dateDif.days))
+# used above for testing
 daysOld = dateDif.days
 
 # do the file work below here:
@@ -51,7 +52,6 @@ with open('UserName.txt', 'wt') as userNameOut:
 # Write the user's age in days to a binary file named Days Old
 # close .bin file --> used 'with' again...
 byteData = bytes(str(daysOld), 'utf-8')
-print(len(byteData))
 
 with open('DaysOld', 'wb') as fileOut2:
     fileOut2.write(byteData)
@@ -72,3 +72,4 @@ with open('UserData.csv', 'w') as fout:
 
 # close csv
 
+print("All files written. Check directory to confirm. Thank you!")
