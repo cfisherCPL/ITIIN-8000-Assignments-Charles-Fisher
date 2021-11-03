@@ -54,7 +54,7 @@ class MyGame(arcade.Window):
         self.wall_list = arcade.SpriteList()
 
         # Set up the player
-        self.player_sprite = arcade.Sprite(":resources:images/animated_characters/female_person/femalePerson_idle.png",
+        self.player_sprite = arcade.Sprite("/Users/cfisher/Desktop/ITIN 8000 FA2021/ITIN 8000 FA21 - GitHub/ITIIN-8000-Assignments---Charles-Fisher/Class Project FA2021/TestImages/300px-Omaha_Maverick_logo.svg.png        ",
                                            SPRITE_SCALING)
         self.player_sprite.center_x = 50
         self.player_sprite.center_y = 64
@@ -63,7 +63,7 @@ class MyGame(arcade.Window):
         # -- Set up the walls
         # Create a row of boxes
         for x in range(173, 650, 64):
-            wall = arcade.Sprite(":resources:images/tiles/boxCrate_double.png",
+            wall = arcade.Sprite("/Users/cfisher/Desktop/ITIN 8000 FA2021/ITIN 8000 FA21 - GitHub/ITIIN-8000-Assignments---Charles-Fisher/Class Project FA2021/TestImages/sprite.jpeg",
                                  SPRITE_SCALING)
             wall.center_x = x
             wall.center_y = 200
