@@ -2,8 +2,17 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="7736f02c-12e5-4b78-a59c-71429684f0d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HW3 FlowChart and Architecture.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITIN 8000 HW3 - Reflection.pdf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/.idea/HW4.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/.idea/inspectionProfiles/profiles_settings.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/.idea/other.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/iris_dataset_table.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/iris_table.csv" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/plot_iris_dataset.py" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../HW4/plot_iris_solo_2D.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -82,8 +91,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.hw3part1" />
       <item itemvalue="Python.TestRun" />
+      <item itemvalue="Python.hw3part1" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -103,6 +112,9 @@
       <workItem from="1634690976738" duration="3829000" />
       <workItem from="1634740173968" duration="7426000" />
       <workItem from="1634831365360" duration="5936000" />
+      <workItem from="1634849599500" duration="116000" />
+      <workItem from="1634850830956" duration="119000" />
+      <workItem from="1635453828819" duration="605000" />
     </task>
     <servers />
   </component>
