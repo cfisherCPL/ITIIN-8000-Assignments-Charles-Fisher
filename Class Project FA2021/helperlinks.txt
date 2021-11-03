@@ -1,0 +1,9 @@
+https://codereview.stackexchange.com/questions/121850/simple-top-down-shooter-game
+
+Let's try using Arcade!
+https://api.arcade.academy/en/latest/
+https://api.arcade.academy/en/latest/examples/sprite_move_walls.html#sprite-move-walls
+
+https://opensource.com/article/18/4/easy-2d-game-creation-python-and-arcade
+
+https://blog.tojicode.com/2012/08/more-gpu-tile-map-demos-zelda.html
