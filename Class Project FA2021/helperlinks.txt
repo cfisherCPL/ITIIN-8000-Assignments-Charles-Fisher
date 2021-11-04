@@ -22,3 +22,9 @@ https://www.codewithrepl.it/07-building-a-game-with-pygame.html
 https://cozyfractal.itch.io/flyre?download
 # Super robust project with highscore structure, character upgrades and state handling
 # Stunning short-build example with great feel
+
+ARCADE IS ABSOLUTELY WHERE IT'S AT
+https://api.arcade.academy/en/latest/pygame_comparison.html
+https://learn.arcade.academy/sv/latest/chapters/21_sprites_and_collisions/sprites.html
+https://api.arcade.academy/en/latest/examples/sprite_collect_coins.html
+https://realpython.com/arcade-python-game-framework/
