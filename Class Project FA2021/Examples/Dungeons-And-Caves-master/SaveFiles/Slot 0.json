@@ -4,13 +4,14 @@
     "cooldown": 30,
     "damage": 1,
     "defense": 0,
-    "life": 6,
+    "life": 1,
     "magicBook": 0,
     "magicCooldown": 0,
     "maxLife": 6,
     "speed": 2
   },
   [
-    "../Maps/map1.tmx"
+    "../Maps/map1.tmx",
+    "../Maps/map3.tmx"
   ]
 ]

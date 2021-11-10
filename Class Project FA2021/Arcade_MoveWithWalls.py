@@ -12,7 +12,7 @@ python -m arcade.examples.sprite_move_walls
 import arcade
 import os
 
-SPRITE_SCALING = 0.5
+SPRITE_SCALING = 0.25
 
 SCREEN_WIDTH = 800
 SCREEN_HEIGHT = 600

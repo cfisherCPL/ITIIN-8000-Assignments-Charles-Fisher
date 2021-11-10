@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7736f02c-12e5-4b78-a59c-71429684f0d3" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7736f02c-12e5-4b78-a59c-71429684f0d3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -33,6 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.TestRun">
     <configuration name="TestRun" type="PythonConfigurationType" factoryName="Python">
@@ -105,6 +104,7 @@
       <workItem from="1634850830956" duration="119000" />
       <workItem from="1635453828819" duration="605000" />
       <workItem from="1635948877381" duration="178000" />
+      <workItem from="1636056072601" duration="128000" />
     </task>
     <servers />
   </component>
