@@ -4,7 +4,6 @@ import threading
 import pygame
 import os
 
-
 from random import randrange
 file = 'Assets/Attic Secrets.mp3'
 pygame.init()
@@ -65,9 +64,7 @@ def update_timer():
         time.sleep(1)
         timer_thing -= 1
 
-# tags remaining so the game can actually end
-wolftags = 2
-deertags = 2
+
 
 # lets get a shotclock kind of thing that flips the it status every 10sec
 tag_timer = 0
@@ -105,6 +102,10 @@ CAUGHT = pygame.USEREVENT + 1  # the plus segment adds to the event queue
 
 # Game Parameters
 SPEED = 7  # what gets added to the position of a sprite when key is pressed
+
+# tags remaining so the game can actually end
+wolftags = 2
+deertags = 2
 
 
 # Define a main function that runs the game
@@ -170,7 +171,6 @@ def main():
 
     pygame.quit()  # will close game
 
-
 # Draw Window Function
 def draw_window(deer, wolf):
     WIN.fill(GRASS_GREEN)  # Draw the Grass
@@ -205,6 +205,7 @@ def draw_window(deer, wolf):
         WIN.blit(WOLF, (wolf.x, wolf.y))  # Sprites
     elif WOLF_FACE == 'L':
         WIN.blit(WOLF_FLIP, (wolf.x, wolf.y))  # Sprites
+
     pygame.display.update()  # Update the screen
 
 # When one player is out of lives, display that the other has won.
