@@ -54,7 +54,7 @@ it_status = random.randint(1, 2)
 timer_thing = 0
 def update_timer():
     global timer_thing
-    timer_thing = 5
+    timer_thing = 3
     while timer_thing > 0:
         time.sleep(1)
         timer_thing -= 1
@@ -68,7 +68,7 @@ tag_timer = 0
 def tag_clock():
     global tag_timer
     global it_status
-    tag_timer = 10
+    tag_timer = 6
     while tag_timer > 0:
         time.sleep(1)
         tag_timer -= 1
@@ -209,7 +209,7 @@ def deer_tagged(deer, wolf):
 
         if timer_thing == 0:
             pygame.event.post(pygame.event.Event(CAUGHT))
-            tag_timer = 10
+            tag_timer = 6
             if get_it() == 1:
                 it_status = 2
                 deertags -= 1
