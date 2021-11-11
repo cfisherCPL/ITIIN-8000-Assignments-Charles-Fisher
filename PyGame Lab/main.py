@@ -38,12 +38,13 @@ WOLF_STARTX = random.randint((WIDTH/2),(WIDTH-5))
 WOLF_STARTY = random.randint(5,HEIGHT)
 
 # PASSABLE IT STATUS?
-it_status = random.randint(1,2)
+it_status = random.randint(1, 2)
 
-def get_it(it_status):
+def get_it():
     return it_status
 
 def set_it(new_status):
+    global it_status
     it_status = new_status
 
 def who_is_it():
@@ -77,9 +78,14 @@ def main():
             if event.type == pygame.QUIT:  # if close clicked
                 run = False  # change run to False to break loop
 
+            """
             if event.type == CAUGHT:
-                run = False
-                print('GOTCHA')
+                global it_status
+                if get_it() == 1:
+                    set_it(2)
+                elif get_it() == 2:
+                    set_it(1)
+            """
 
         keys_pressed = pygame.key.get_pressed()
         if keys_pressed[pygame.K_a] and deer.x - SPEED > 0:  # Deer Left...the and statement prevents leaving the edge of the screen
@@ -111,6 +117,7 @@ def draw_window(deer, wolf):
     WIN.blit(DEER, (deer.x, deer.y))  # Sprites
     WIN.blit(WOLF, (wolf.x, wolf.y))  # Sprites
 
+    # make sure this is BEFORE your update, 5 head
     it_status_display = HUD_FONT.render(
         '' + str(who_is_it()), 1, WHITE)
     WIN.blit(it_status_display, (10, 10))
@@ -124,11 +131,12 @@ def draw_window(deer, wolf):
 # Create a function to determine if tagged
 def deer_tagged(deer, wolf):
     if deer.colliderect(wolf):
-        pygame.event.post(pygame.event.Event(CAUGHT))
+        # pygame.event.post(pygame.event.Event(CAUGHT))
+        global it_status
         if get_it() == 1:
-            IT_STATUS = 2
+            it_status = 2
         elif get_it() == 2:
-            IT_STATUS =1
+            it_status = 1
 
 
 if __name__ == "__main__":
