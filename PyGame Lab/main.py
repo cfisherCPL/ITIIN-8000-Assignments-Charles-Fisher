@@ -34,11 +34,16 @@ FPS = 60
 # Sprites
 SPRITE_WIDTH = 128
 SPRITE_HEIGHT = 128
+
+DEER_FACE = 'R'
 DEER_SPRITE = pygame.image.load(os.path.join('Assets', 'deer.png'))
 DEER = pygame.transform.scale(DEER_SPRITE, (SPRITE_WIDTH, SPRITE_HEIGHT))
+DEER_FLIP = pygame.transform.flip(DEER, True, False)
 
+WOLF_FACE = 'R'
 WOLF_SPRITE = pygame.image.load(os.path.join('Assets', 'arctic-fox.png'))
 WOLF = pygame.transform.scale(WOLF_SPRITE, (SPRITE_WIDTH, SPRITE_HEIGHT))
+WOLF_FLIP = pygame.transform.flip(WOLF, True, False)
 
 # RANDOM START POSITIONS
 DEER_STARTX = random.randint(5,(WIDTH / 2)) # random start on left half of screen
@@ -130,21 +135,26 @@ def main():
 
             if event.type == CAUGHT:
                HIT_SOUND.play()
-
+        global DEER_FACE
         keys_pressed = pygame.key.get_pressed()
         if keys_pressed[pygame.K_a] and deer.x - SPEED > 0:  # Deer Left...the and statement prevents leaving the edge of the screen
             deer.x -= SPEED
+            DEER_FACE = 'L'
         if keys_pressed[pygame.K_d] and deer.x + SPEED + SPRITE_WIDTH < 1200:  # Deer Right
             deer.x += SPEED
+            DEER_FACE = 'R'
         if keys_pressed[pygame.K_w] and deer.y - SPEED > 0:  # Deer Up
             deer.y -= SPEED
         if keys_pressed[pygame.K_s] and deer.y + SPEED + SPRITE_HEIGHT < 800:  # Deer Down
             deer.y += SPEED
 
+        global WOLF_FACE
         if keys_pressed[pygame.K_LEFT] and wolf.x - SPEED > 0:  # Wolf Left
             wolf.x -= SPEED
+            WOLF_FACE = 'L'
         if keys_pressed[pygame.K_RIGHT] and wolf.x + SPEED + SPRITE_WIDTH < 1200:  # Wolf Right
             wolf.x += SPEED
+            WOLF_FACE = 'R'
         if keys_pressed[pygame.K_UP] and wolf.y - SPEED > 0:  # Wolf Up
             wolf.y -= SPEED
         if keys_pressed[pygame.K_DOWN] and wolf.y + SPEED + SPRITE_HEIGHT < 800:  # Wolf Down
@@ -186,9 +196,15 @@ def draw_window(deer, wolf):
         'Auto-It In: ' + str(tag_timer), 1, WHITE)
     WIN.blit(tagtimer_hud, (WIDTH/2 - tagtimer_hud.get_width() / 2, 650))
 
-    WIN.blit(DEER, (deer.x, deer.y))  # Sprites
-    WIN.blit(WOLF, (wolf.x, wolf.y))  # Sprites
+    if DEER_FACE == 'R':
+        WIN.blit(DEER, (deer.x, deer.y))  # Sprites
+    elif DEER_FACE == 'L':
+        WIN.blit(DEER_FLIP, (deer.x, deer.y))
 
+    if WOLF_FACE == 'R':
+        WIN.blit(WOLF, (wolf.x, wolf.y))  # Sprites
+    elif WOLF_FACE == 'L':
+        WIN.blit(WOLF_FLIP, (wolf.x, wolf.y))  # Sprites
     pygame.display.update()  # Update the screen
 
 # When one player is out of lives, display that the other has won.
