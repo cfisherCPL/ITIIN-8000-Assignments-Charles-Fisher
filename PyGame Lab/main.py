@@ -31,8 +31,8 @@ RED = (200,15,0)
 FPS = 60
 
 # Sprites
-SPRITE_WIDTH = 128
-SPRITE_HEIGHT = 128
+SPRITE_WIDTH = 64
+SPRITE_HEIGHT = 64
 
 DEER_FACE = 'R'
 DEER_SPRITE = pygame.image.load(os.path.join('Assets', 'deer.png'))
@@ -237,7 +237,7 @@ def deer_tagged(deer, wolf):
                 wolftags -= 1
             # start the no-backsies countdown
             t = threading.Thread(target=update_timer)
-            t.daemon = True
+            t.daemon = True # we KILL the timer when the program itself (main) is dead
             t.start()
 
 
