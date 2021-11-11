@@ -26,6 +26,7 @@ HUD_FONT = pygame.font.SysFont('arial', 40)
 # Color Pallette
 GRASS_GREEN = (50, 175, 60)
 WHITE = (255, 255, 255)
+RED = (200,15,0)
 
 # Define
 FPS = 60
@@ -41,10 +42,10 @@ WOLF = pygame.transform.scale(WOLF_SPRITE, (SPRITE_WIDTH, SPRITE_HEIGHT))
 
 # RANDOM START POSITIONS
 DEER_STARTX = random.randint(5,(WIDTH / 2)) # random start on left half of screen
-DEER_STARTY = random.randint(5,HEIGHT)
+DEER_STARTY = random.randint(5,(HEIGHT-5) - SPRITE_HEIGHT)
 
-WOLF_STARTX = random.randint((WIDTH/2),(WIDTH-5))
-WOLF_STARTY = random.randint(5,HEIGHT)
+WOLF_STARTX = random.randint((WIDTH/2),(WIDTH-5) - SPRITE_WIDTH)
+WOLF_STARTY = random.randint(5,(HEIGHT-5) - SPRITE_HEIGHT)
 
 # PASSABLE IT STATUS?
 # starts randomly for players
@@ -60,8 +61,8 @@ def update_timer():
         timer_thing -= 1
 
 # tags remaining so the game can actually end
-wolftags = 5
-deertags = 5
+wolftags = 2
+deertags = 2
 
 # lets get a shotclock kind of thing that flips the it status every 10sec
 tag_timer = 0
@@ -125,12 +126,7 @@ def main():
         for event in pygame.event.get():  # Checks for EVENTS
             if event.type == pygame.QUIT:  # if close clicked
                 run = False  # change run to False to break loop
-            if wolftags == 0:
-                draw_winner("Deer Wins!")
-                run = False
-            elif deertags == 0:
-                draw_winner("Wolf Wins!")
-                run = False
+
 
             if event.type == CAUGHT:
                HIT_SOUND.play()
@@ -153,8 +149,14 @@ def main():
             wolf.y -= SPEED
         if keys_pressed[pygame.K_DOWN] and wolf.y + SPEED + SPRITE_HEIGHT < 800:  # Wolf Down
             wolf.y += SPEED
-        draw_window(deer, wolf)  # This function draws the screen
         deer_tagged(deer, wolf)  # Check if tagged
+        draw_window(deer, wolf)  # This function draws the screen
+        if wolftags == 0:
+            draw_winner("Deer Wins!")
+            run = False
+        elif deertags == 0:
+            draw_winner("Wolf Wins!")
+            run = False
 
     pygame.quit()  # will close game
 
@@ -191,9 +193,9 @@ def draw_window(deer, wolf):
 
 # When one player is out of lives, display that the other has won.
 def draw_winner(text):
-    draw_text = HUD_FONT.render(text, 1, WHITE)
+    draw_text = HUD_FONT.render(text, 1, RED)
     WIN.blit(draw_text, (WIDTH / 2 - draw_text.get_width() /
-                         2, HEIGHT / 2 - draw_text.get_height() / 2))
+                         2,  draw_text.get_height() + 5))
     pygame.display.update()
     pygame.time.delay(5000)
 
