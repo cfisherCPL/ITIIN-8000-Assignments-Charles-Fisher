@@ -1,10 +1,10 @@
 import random
-
+import time
+import threading
 import pygame
 import os
 from random import randrange
 pygame.font.init()
-pygame.mixer.init()
 
 
 # Create our Main Surface
@@ -40,6 +40,19 @@ WOLF_STARTY = random.randint(5,HEIGHT)
 # PASSABLE IT STATUS?
 it_status = random.randint(1, 2)
 
+timer_thing = 0
+
+def update_timer():
+    global timer_thing
+    x = 0
+    while x < 5:
+        timer_thing += 1
+        time.sleep(1)
+        x += 1
+    if timer_thing == 5:
+        timer_thing = 0
+
+
 def get_it():
     return it_status
 
@@ -73,6 +86,7 @@ def main():
     run = True  # set run to True
     # While loop that runs the game
     while run:  # Game Loop
+
         clock.tick(FPS) # uses the defined FPS value to tick the loop along
         for event in pygame.event.get():  # Checks for EVENTS
             if event.type == pygame.QUIT:  # if close clicked
@@ -122,6 +136,10 @@ def draw_window(deer, wolf):
         '' + str(who_is_it()), 1, WHITE)
     WIN.blit(it_status_display, (10, 10))
 
+    timer_status = HUD_FONT.render(
+        'No Tag Back: ' + str(timer_thing), 1, WHITE)
+    WIN.blit(timer_status, (WIDTH - timer_status.get_width() -10, 10))
+
     pygame.display.update()  # Update the screen
 
 
@@ -133,10 +151,13 @@ def deer_tagged(deer, wolf):
     if deer.colliderect(wolf):
         # pygame.event.post(pygame.event.Event(CAUGHT))
         global it_status
-        if get_it() == 1:
-            it_status = 2
-        elif get_it() == 2:
-            it_status = 1
+        if timer_thing == 0:
+            if get_it() == 1:
+                it_status = 2
+            elif get_it() == 2:
+                it_status = 1
+            t = threading.Thread(target=update_timer)
+            t.start()
 
 
 if __name__ == "__main__":
