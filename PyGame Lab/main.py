@@ -44,13 +44,11 @@ timer_thing = 0
 
 def update_timer():
     global timer_thing
-    x = 0
-    while x < 5:
-        timer_thing += 1
+    timer_thing = 5
+    while timer_thing > 0:
         time.sleep(1)
-        x += 1
-    if timer_thing == 5:
-        timer_thing = 0
+        timer_thing -= 1
+
 
 
 def get_it():
