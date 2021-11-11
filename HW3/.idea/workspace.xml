@@ -1,11 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="7736f02c-12e5-4b78-a59c-71429684f0d3" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/HW3 FlowChart and Architecture.pdf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/ITIN 8000 HW3 - Reflection.pdf" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="7736f02c-12e5-4b78-a59c-71429684f0d3" name="Changes" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -35,6 +31,7 @@
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RunManager" selected="Python.TestRun">
     <configuration name="TestRun" type="PythonConfigurationType" factoryName="Python">
@@ -82,8 +79,8 @@
       <method v="2" />
     </configuration>
     <list>
-      <item itemvalue="Python.hw3part1" />
       <item itemvalue="Python.TestRun" />
+      <item itemvalue="Python.hw3part1" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -103,6 +100,11 @@
       <workItem from="1634690976738" duration="3829000" />
       <workItem from="1634740173968" duration="7426000" />
       <workItem from="1634831365360" duration="5936000" />
+      <workItem from="1634849599500" duration="116000" />
+      <workItem from="1634850830956" duration="119000" />
+      <workItem from="1635453828819" duration="605000" />
+      <workItem from="1635948877381" duration="178000" />
+      <workItem from="1636056072601" duration="128000" />
     </task>
     <servers />
   </component>
