@@ -33,7 +33,7 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
-  <component name="RunManager" selected="Python.TestRun">
+  <component name="RunManager" selected="Python.hw3part1">
     <configuration name="TestRun" type="PythonConfigurationType" factoryName="Python">
       <module name="HW3" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -105,6 +105,7 @@
       <workItem from="1635453828819" duration="605000" />
       <workItem from="1635948877381" duration="178000" />
       <workItem from="1636056072601" duration="128000" />
+      <workItem from="1636671707745" duration="596000" />
     </task>
     <servers />
   </component>
