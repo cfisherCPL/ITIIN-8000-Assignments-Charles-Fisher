@@ -41,40 +41,45 @@ print('Standard run at 20% test: ' + str(metrics.accuracy_score(y_test, y_pred))
 from sklearn.datasets import load_iris
 iris = load_iris()
 
-# splitting into train and test datasets
-from sklearn.model_selection import train_test_split
-datasets = train_test_split(iris.data, iris.target,
-                            test_size=0.2)
-train_data, test_data, train_labels, test_labels = datasets
+import random
+for i in range (5):
+    rnd_test = round(random.uniform(0.1, 0.9), 1)
+    # splitting into train and test datasets
+    from sklearn.model_selection import train_test_split
+    datasets = train_test_split(iris.data, iris.target, test_size=rnd_test)
+    train_data, test_data, train_labels, test_labels = datasets
 
-# scaling the data
-from sklearn.preprocessing import StandardScaler
-scaler = StandardScaler()
+    # scaling the data
+    from sklearn.preprocessing import StandardScaler
+    scaler = StandardScaler()
 
-# we fit the train data
-scaler.fit(train_data)
+    # we fit the train data
+    scaler.fit(train_data)
 
-# scaling the train data
-train_data = scaler.transform(train_data)
-test_data = scaler.transform(test_data)
+    # scaling the train data
+    train_data = scaler.transform(train_data)
+    test_data = scaler.transform(test_data)
 
-# Training the Model
-from sklearn.neural_network import MLPClassifier
-# creating an classifier from the model:
-mlp = MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000)
+    # Training the Model
+    from sklearn.neural_network import MLPClassifier
+    # creating an classifier from the model:
+    mlp = MLPClassifier(hidden_layer_sizes=(10, 5), max_iter=1000)
 
-# let's fit the training data to our model
-mlp.fit(train_data, train_labels)
+    # let's fit the training data to our model
+    mlp.fit(train_data, train_labels)
 
-# testing accuracy
-from sklearn.metrics import accuracy_score
+    # testing accuracy
+    from sklearn.metrics import accuracy_score
 
-predictions_train = mlp.predict(train_data)
-print(accuracy_score(predictions_train, train_labels))
-predictions_test = mlp.predict(test_data)
-print(accuracy_score(predictions_test, test_labels))
+    predictions_train = mlp.predict(train_data)
+    print('Results for '+ str(rnd_test) + ' sample size:')
+    print('Train accuracy: ' + str(accuracy_score(predictions_train, train_labels)))
+    predictions_test = mlp.predict(test_data)
+    print('Test accuracy:  ' + str(accuracy_score(predictions_test, test_labels)))
 
-
+"""
+# past here it tests accuracy, but not sure of what the specs mean per se
+# so, let's just hide it for the assignment, even if it's useful
 from sklearn.metrics import confusion_matrix
 
 confusion_matrix(predictions_train, train_labels)
@@ -83,3 +88,4 @@ confusion_matrix(predictions_test, test_labels)
 from sklearn.metrics import classification_report
 
 print(classification_report(predictions_test, test_labels))
+"""
