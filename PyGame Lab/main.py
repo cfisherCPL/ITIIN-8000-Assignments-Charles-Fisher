@@ -101,11 +101,11 @@ CAUGHT = pygame.USEREVENT + 1  # the plus segment adds to the event queue
 # if adding more you use a higher number to the queue, +2 and soforth
 
 # Game Parameters
-SPEED = 7  # what gets added to the position of a sprite when key is pressed
+SPEED = 5  # what gets added to the position of a sprite when key is pressed
 
 # tags remaining so the game can actually end
-wolftags = 2
-deertags = 2
+wolftags = 4
+deertags = 4
 
 
 # Define a main function that runs the game
