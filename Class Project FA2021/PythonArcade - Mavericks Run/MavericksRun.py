@@ -1,19 +1,14 @@
-import random
-# from uuid import uuid4
+
 import arcade
 import math
 import random
-import os
 import time
-from uuid import uuid4
-
-from pyglet.math import Vec2
 
 
 # How long should we wait idle before doing something like switching the view?
 IDLE_TIME = 30.0
 
-# Constants
+# Constants for the size of the screen/window to use for the game
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 SCREEN_TITLE = "TiledGame"
@@ -25,16 +20,17 @@ VIEWPORT_MARGIN_HORZ = 600
 VIEWPORT_MARGIN_VERT = 350
 
 # How fast the camera pans to the player. 1.0 is instant.
-# Used later for scrolling margin camera. Need to get workings 11-29-21
 CAMERA_SPEED = 0.1
 
 # Movement speed of player, in pixels per frame
 # Updates per frame for sprite animations
-MOVEMENT_SPEED = 10
+# Sprite animations held for project turn in 12-5-21
+MOVEMENT_SPEED = 7
 UPDATES_PER_FRAME = 5
 
 # Constants used to track if the player is facing left or right
 # Use later for animated sprites. 11-29-21
+# Animated player sprites long-listed for class presentation 12-5-21
 RIGHT_FACING = 0
 LEFT_FACING = 1
 
@@ -49,34 +45,34 @@ GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 # Key used as int to pull from rand_int later
 # Store the name, x coord, and y coord
 SPAWN_LOCATIONS = {
-    "0": ["BellTower", 9515, 6970],
-    "1": ["LibraryLot", 7745, 6677],
-    "2": ["DurhamLot", 8935, 7848],
-    "3": ["WestFacLotFar", 2975, 7668],
-    "4": ["WestFacLotNear", 4335, 5688],
-    "5": ["WestGarage", 1635, 4849],
-    "6": ["MavVillage", 2405, 3529],
-    "7": ["UniversityVillage", 6145, 5089],
-    "8": ["H&KLot", 10005, 4837],
-    "9": ["AlineCPACLot", 11575, 5769],
-    "10": ["EppleyLot", 14457, 8077],
-    "11": ["NECornerLot", 17415, 8937],
-    "12": ["AshLot", 17735, 6207],
-    "13": ["EastGarage", 16705, 5327],
-    "14": ["BioMechLot", 13293, 2619],
+    "0": ["Bell Tower", 9515, 6970],
+    "1": ["Library Parking Lot", 7745, 6677],
+    "2": ["Durham Parking Lot", 8935, 7848],
+    "3": ["West Faculty Lot Far", 2975, 7668],
+    "4": ["West Faculty Lot Near", 4335, 5688],
+    "5": ["West Garage", 1635, 4849],
+    "6": ["Mav Village", 2405, 3529],
+    "7": ["University Village", 6145, 5089],
+    "8": ["H&K Parking Lot", 10005, 4837],
+    "9": ["CPACS Faculty Lot", 11575, 5769],
+    "10": ["Eppley Guest Lot", 14457, 8077],
+    "11": ["NE Corner Lot", 17415, 8937],
+    "12": ["ASH Side Lot", 17735, 6207],
+    "13": ["East Garage", 16705, 5327],
+    "14": ["BioMech Lot", 13293, 2619],
     }
 
 
 # Target locations on map to be used for compass
 TARGET_LOCATIONS = {
     "0": ["Library 2nd Floor", 8215, 7107],
-    "1": ["Biomechanics", 13465, 2476],
+    "1": ["Biomechanics - West Entry", 13465, 2476],
     "2": ["Milo Bail Student Center", 12655, 7107],
-    "3": ["CPACS", 11115, 6829],
-    "4": ["Allwine", 12265, 6529],
-    "5": ["Music - Strauss PAC ", 10585, 7359],
-    "6": ["Weber North Entry", 6523, 7029],
-    "7": ["Durham South Entry", 5503, 7387],
+    "3": ["CPACS - North Door", 11115, 6829],
+    "4": ["Allwine Hall - West Door", 12265, 6529],
+    "5": ["Strauss PAC - Main Entry", 10585, 7359],
+    "6": ["Weber Fine Arts - North Entry", 6523, 7029],
+    "7": ["Durham Science - South Entry", 5503, 7387],
     "8": ["Sculpture and Ceramic Studio", 9055, 4879],
     }
 
@@ -84,6 +80,8 @@ TARGET_LOCATIONS = {
 LAYER_NAME_BOUNDS = "Buildings"
 LAYER_NAME_FOREGROUND = "ForeGround"
 
+# MiniMap and Constants deprecated for performance 12-5-21
+"""
 # Constants for MiniMap
 # Background color must include an alpha component
 # Default values 256, 256, 2048, 2048
@@ -92,9 +90,10 @@ MINIMAP_WIDTH = 400
 MINIMAP_HEIGHT = 220
 MAP_WIDTH = 18000
 MAP_HEIGHT = 10000
+"""
 
-
-class InstructionView(arcade.View):
+# TitleView used as main entry screen
+class TitleView(arcade.View):
 
     def __init__(self, game_view):
         super().__init__()
@@ -104,10 +103,11 @@ class InstructionView(arcade.View):
         self.music_playing = False
         self.title_music = arcade.load_sound("SoundAssets/Bit Bit Loop.mp3")
         self.title_play_music = None
+        self.texture = arcade.load_texture("VisualAssets/Mavs Run 1200x720 ScreenMaker.png")
 
     def on_show(self):
         """ This is run once when we switch to this view """
-        arcade.set_background_color(arcade.csscolor.FIREBRICK)
+        arcade.set_background_color(arcade.csscolor.BLACK)
 
         # Reset the viewport, necessary if we have a scrolling game and we need
         # to reset the viewport back to the start so we can see what we draw.
@@ -117,9 +117,11 @@ class InstructionView(arcade.View):
     def on_draw(self):
         """ Draw this view """
         arcade.start_render()
-        arcade.draw_text("Maverick's Run", self.window.width / 2, self.window.height / 2,
-                         arcade.color.WHITE, font_size=50, anchor_x="center")
-        arcade.draw_text("Press any button to advance", self.window.width / 2, self.window.height / 2 - 75,
+        self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
+                                SCREEN_WIDTH, SCREEN_HEIGHT)
+        # arcade.draw_text("Maverick's Run", self.window.width / 2, self.window.height / 2,
+        #                 arcade.color.WHITE, font_size=50, anchor_x="center")
+        arcade.draw_text("PRESS ANY BUTTON TO PLAY", self.window.width / 2, self.window.height / 2 - 75,
                          arcade.color.WHITE, font_size=20, anchor_x="center")
 
     def on_key_press(self, symbol: int, modifiers: int):
@@ -138,13 +140,14 @@ class InstructionView(arcade.View):
             arcade.stop_sound(self.title_play_music)
             self.window.show_view(load_screen)
 
-
+# LoadScreen showcases a simple how-to
 class LoadScreen(arcade.View):
 
     def __init__(self, game_view):
         super().__init__()
         self.game_view = game_view
         self.load_timeout = 0.0
+        self.texture = arcade.load_texture("VisualAssets/MavsRun_HowTo.png")
 
     def on_show_view(self):
         # using same setup as above, but covering up the load time of GameView
@@ -153,11 +156,8 @@ class LoadScreen(arcade.View):
 
     def on_draw(self):
         arcade.start_render()
-        arcade.draw_text("Help Mav get to their building!", self.window.width / 2, self.window.height / 2,
-                         arcade.color.WHITE, font_size=40, anchor_x="center")
-        arcade.draw_text("Press any key to start.", self.window.width / 2,
-                         self.window.height / 2 - 100,
-                         arcade.color.WHITE, font_size=20, anchor_x="center")
+        self.texture.draw_sized(SCREEN_WIDTH / 2, SCREEN_HEIGHT / 2,
+                                SCREEN_WIDTH, SCREEN_HEIGHT)
 
     def on_key_press(self, symbol: int, modifiers: int):
         self.game_view.new_player_start()
@@ -169,7 +169,7 @@ class LoadScreen(arcade.View):
             self.game_view.new_player_start()
             self.window.show_view(self.game_view)
 
-
+# GameOver used when player arrives at location
 class GameOver(arcade.View):
     def __init__(self, game_view):
         super().__init__()
@@ -205,7 +205,7 @@ class GameOver(arcade.View):
     def on_key_press(self, key, modifiers):
         """ If the user presses any button, start the game. """
         if key == arcade.key.Q:
-            title_screen = InstructionView(self.game_view)
+            title_screen = TitleView(self.game_view)
             arcade.stop_sound(self.game_view.music_player)
             self.game_view.music_playing = False
             time.sleep(3)
@@ -218,12 +218,12 @@ class GameOver(arcade.View):
         self.game_over_timeout += delta_time
 
         if self.game_over_timeout >= IDLE_TIME:
-            title_screen = InstructionView(self.game_view)
+            title_screen = TitleView(self.game_view)
             arcade.stop_sound(self.game_view.music_player)
             self.game_view.music_playing = False
             self.window.show_view(title_screen)
 
-
+# GameView is the main gameplay screen and functions
 class GameView(arcade.View):
     """
     Main application class.
@@ -315,6 +315,10 @@ class GameView(arcade.View):
         self.music_playing = False
         self.music_player = None
 
+        # Add objects for HUD texture items
+        self.pause_hud = arcade.load_texture("VisualAssets/PauseHUD.png")
+        self.move_hud = arcade.load_texture("VisualAssets/MavsRun MoveHUD.png")
+
         arcade.set_background_color(arcade.csscolor.GREEN)
 
     def setup(self):
@@ -365,7 +369,7 @@ class GameView(arcade.View):
         self.scene.add_sprite_list_before("Arrow", "Player")
 
         # Set up the player, specifically placing it at these coordinates.
-        image_source = ":resources:images/animated_characters/robot/robot_idle.png"
+        image_source = "VisualAssets/Durango_idle.png"
         self.player_sprite = arcade.Sprite(image_source, CHARACTER_SCALING)
         self.player_sprite.center_x = self.player_start_x
         self.player_sprite.center_y = self.player_start_y
@@ -373,12 +377,12 @@ class GameView(arcade.View):
 
         # Load the image for the target coin
         # plac initial coin
-        self.coin = arcade.Sprite(":resources:images/items/coinGold.png", COIN_SCALING)
+        self.coin = arcade.Sprite(":resources:images/items/gold_1.png", COIN_SCALING)
         self.coin.center_x = self.target_x
         self.coin.center_y = self.target_y
         self.scene.add_sprite("Coins", self.coin)
 
-        self.coin2 =arcade.Sprite(":resources:images/items/coinGold.png", COIN_SCALING)
+        self.coin2 = arcade.Sprite(":resources:images/items/coinGold.png", COIN_SCALING)
         self.coin2.center_x = 9645
         self.coin2.center_y = 6759
         self.scene.add_sprite("Coins", self.coin2)
@@ -428,8 +432,6 @@ class GameView(arcade.View):
 
         # Create the target location announcement on-screen
         self.target_locale = "Go to " + self.target_name
-
-
 
     def random_spawn_and_target(self):
         # initialize/seed the rng
@@ -495,6 +497,8 @@ class GameView(arcade.View):
         self.target_locale = "Go to " + self.target_name
         self.total_time = 0.0
 
+    # Direction lookup returns an angle value to be used
+    # in the update of the compass sprite rotation
     def direction_lookup(self, destination_x, origin_x, destination_y, origin_y):
 
         delta_x = destination_x - origin_x
@@ -551,6 +555,10 @@ class GameView(arcade.View):
                          SCREEN_WIDTH // 2, 100,
                          arcade.color.WHITE, 30,
                          anchor_x="center")
+
+        # Display the HUD elements for player UI help
+        self.move_hud.draw_scaled(128, 72)
+        self.pause_hud.draw_scaled(SCREEN_WIDTH - 128, 50, 0.65)
 
     def on_key_press(self, key, modifiers):
         """Called whenever a key is pressed."""
@@ -645,7 +653,7 @@ class GameView(arcade.View):
         if not self.music_playing:
             # Make sure to make a player object when you play a sound,
             # or you won't be able to stop it later
-            self.music_player = arcade.play_sound(self.main_music, looping=True)
+            self.music_player = arcade.play_sound(self.main_music, looping=True, volume=0.6)
             self.music_playing = True
 
         # Draw the timer
@@ -685,12 +693,12 @@ class GameView(arcade.View):
             self.window.show_view(game_over)
 
         if self.timeout_count >= IDLE_TIME:
-            title_screen = InstructionView(self)
+            title_screen = TitleView(self)
             self.window.show_view(title_screen)
             arcade.stop_sound(player=self.music_player)
             self.music_playing = False
 
-
+# PauseView allows players to pause the game inside of GameView
 class PauseView(arcade.View):
     def __init__(self, game_view):
         super().__init__()
@@ -722,17 +730,17 @@ class PauseView(arcade.View):
                          arcade.color.BLACK, font_size=50, anchor_x="center")
 
         # Show tip to return or reset
-        arcade.draw_text("Press Esc. to return",
-                         SCREEN_WIDTH / 2,
-                         SCREEN_HEIGHT / 2,
-                         arcade.color.BLACK,
-                         font_size=20,
-                         anchor_x="center")
-        arcade.draw_text("Press Enter to reset",
+        arcade.draw_text("Press ESC to return",
                          SCREEN_WIDTH / 2,
                          SCREEN_HEIGHT / 2 - 30,
                          arcade.color.BLACK,
-                         font_size=20,
+                         font_size=25,
+                         anchor_x="center")
+        arcade.draw_text("Press ENTER to respawn",
+                         SCREEN_WIDTH / 2,
+                         SCREEN_HEIGHT / 2 - 65,
+                         arcade.color.BLACK,
+                         font_size=25,
                          anchor_x="center")
 
     def on_key_press(self, key, _modifiers):
@@ -751,12 +759,18 @@ class PauseView(arcade.View):
 def main():
     """ Main function """
 
+    # Draw the window to be used for the game
     window = arcade.Window(SCREEN_WIDTH, SCREEN_HEIGHT, SCREEN_TITLE)
+    # Create a GameView object as the main game to pass to the other Views
     game_view = GameView()
+    # Run setup from gameview to build map from tiled json and import sprites
+    # done as part of main startup due to long load time with larger map
     game_view.setup()
-    start_view = InstructionView(game_view)
-    load_screen = LoadScreen(game_view)
+    # make the titleView object
+    start_view = TitleView(game_view)
+    # Show the titleView screen in the window
     window.show_view(start_view)
+    # start the game via the arcade library
     arcade.run()
 
 
