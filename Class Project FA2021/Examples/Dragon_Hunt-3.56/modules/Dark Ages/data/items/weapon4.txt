@@ -1,6 +1,0 @@
-Name=Mace
-type=0
-quality=3
-price=55
-description=A big metal stick.
-picture=items/mace.png

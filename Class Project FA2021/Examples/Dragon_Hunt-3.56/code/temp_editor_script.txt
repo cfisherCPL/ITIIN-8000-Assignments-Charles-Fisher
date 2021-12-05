@@ -1,2 +1,0 @@
-dialog("This chest is empty.")
-

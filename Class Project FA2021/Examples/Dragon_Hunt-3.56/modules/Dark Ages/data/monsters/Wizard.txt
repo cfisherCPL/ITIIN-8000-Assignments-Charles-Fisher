@@ -1,8 +1,0 @@
-
-Name=Wizard
-hp=40
-attack=16
-defense=16
-exp=100
-gold=60
-description=Wizard

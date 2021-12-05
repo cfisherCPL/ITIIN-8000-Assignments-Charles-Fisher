@@ -1,6 +1,0 @@
-Name=Steel Plate Boots
-type=5
-quality=5
-price=120
-description=Quite expensive, but worth every gold piece.
-picture=items/steel_boots.png

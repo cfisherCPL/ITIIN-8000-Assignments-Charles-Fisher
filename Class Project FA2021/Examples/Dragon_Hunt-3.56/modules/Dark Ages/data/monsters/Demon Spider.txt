@@ -1,8 +1,0 @@
-
-Name=Demon Spider
-hp=130
-attack=18
-defense=18
-exp=300
-gold=300
-description=Demon Spider

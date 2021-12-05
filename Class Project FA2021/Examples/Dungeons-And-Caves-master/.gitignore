@@ -1,5 +1,0 @@
-# Don't track content of these folders
-.git/
-.idea/
-OldFiles/
-Files/__pycache__/
