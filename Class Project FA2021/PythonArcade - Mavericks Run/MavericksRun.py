@@ -5,80 +5,8 @@ import random
 import time
 
 
-# How long should we wait idle before doing something like switching the view?
-IDLE_TIME = 30.0
-
-# Constants for the size of the screen/window to use for the game
-SCREEN_WIDTH = 1280
-SCREEN_HEIGHT = 720
-SCREEN_TITLE = "TiledGame"
-
-# How many pixels to keep as a minimum margin between the character
-# and the edge of the screen.
-# Used  for scrolling margin camera.
-VIEWPORT_MARGIN_HORZ = 600
-VIEWPORT_MARGIN_VERT = 350
-
-# How fast the camera pans to the player. 1.0 is instant.
-CAMERA_SPEED = 0.1
-
-# Movement speed of player, in pixels per frame
-# Updates per frame for sprite animations
-# Sprite animations held for project turn in 12-5-21
-MOVEMENT_SPEED = 7
-UPDATES_PER_FRAME = 5
-
-# Constants used to track if the player is facing left or right
-# Use later for animated sprites. 11-29-21
-# Animated player sprites long-listed for class presentation 12-5-21
-RIGHT_FACING = 0
-LEFT_FACING = 1
-
-# Constants used to scale our sprites from their original size
-CHARACTER_SCALING = 0.45
-TILE_SCALING = 2.5
-COIN_SCALING = 0.5
-SPRITE_PIXEL_SIZE = 16
-GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
-
-# A Dict of all potential starting locations
-# Key used as int to pull from rand_int later
-# Store the name, x coord, and y coord
-SPAWN_LOCATIONS = {
-    "0": ["Bell Tower", 9515, 6970],
-    "1": ["Library Parking Lot", 7745, 6677],
-    "2": ["Durham Parking Lot", 8935, 7848],
-    "3": ["West Faculty Lot Far", 2975, 7668],
-    "4": ["West Faculty Lot Near", 4335, 5688],
-    "5": ["West Garage", 1635, 4849],
-    "6": ["Mav Village", 2405, 3529],
-    "7": ["University Village", 6145, 5089],
-    "8": ["H&K Parking Lot", 10005, 4837],
-    "9": ["CPACS Faculty Lot", 11575, 5769],
-    "10": ["Eppley Guest Lot", 14457, 8077],
-    "11": ["NE Corner Lot", 17415, 8937],
-    "12": ["ASH Side Lot", 17735, 6207],
-    "13": ["East Garage", 16705, 5327],
-    "14": ["BioMech Lot", 13293, 2619],
-    }
 
 
-# Target locations on map to be used for compass
-TARGET_LOCATIONS = {
-    "0": ["Library 2nd Floor", 8215, 7107],
-    "1": ["Biomechanics - West Entry", 13465, 2476],
-    "2": ["Milo Bail Student Center", 12655, 7107],
-    "3": ["CPACS - North Door", 11115, 6829],
-    "4": ["Allwine Hall - West Door", 12265, 6529],
-    "5": ["Strauss PAC - Main Entry", 10585, 7359],
-    "6": ["Weber Fine Arts - North Entry", 6523, 7029],
-    "7": ["Durham Science - South Entry", 5503, 7387],
-    "8": ["Sculpture and Ceramic Studio", 9055, 4879],
-    }
-
-# Layer Names from our TileMap
-LAYER_NAME_BOUNDS = "Buildings"
-LAYER_NAME_FOREGROUND = "ForeGround"
 
 # MiniMap and Constants deprecated for performance 12-5-21
 """
