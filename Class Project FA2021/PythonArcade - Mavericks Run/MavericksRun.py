@@ -79,7 +79,7 @@ TARGET_LOCATIONS = {
     "3": ["Weber Fine Arts North", 7452, 8029],
     "4": ["Durham Science South", 6579, 8384],
     "5": ["Gerontology Building", 6059, 7354],
-    "6": ["Sculpture and Ceramic Studio", 100059, 5884],
+    "6": ["Sculpture and Ceramic Studio", 10059, 5884],
     "7": ["H&K Main Entry", 12399, 5244],
     "8": ["Biomechanics West Entry", 14462, 3454],
     "9": ["Soccer Field Stands", 14522, 5844],
