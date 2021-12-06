@@ -1,0 +1,86 @@
+('/Users/cfisher/Desktop/ITIN 8000 FA2021/ITIN 8000 FA21 - '
+ 'GitHub/ITIIN-8000-Assignments---Charles-Fisher/Class Project '
+ 'FA2021/PythonArcade - Mavericks Run/build/MavericksRun/MavericksRun',
+ True,
+ False,
+ True,
+ None,
+ None,
+ False,
+ False,
+ None,
+ True,
+ True,
+ 'x86_64',
+ None,
+ None,
+ '/Users/cfisher/Desktop/ITIN 8000 FA2021/ITIN 8000 FA21 - '
+ 'GitHub/ITIIN-8000-Assignments---Charles-Fisher/Class Project '
+ 'FA2021/PythonArcade - Mavericks Run/build/MavericksRun/MavericksRun.pkg',
+ [('PYZ-00.pyz',
+   '/Users/cfisher/Desktop/ITIN 8000 FA2021/ITIN 8000 FA21 - '
+   'GitHub/ITIIN-8000-Assignments---Charles-Fisher/Class Project '
+   'FA2021/PythonArcade - Mavericks Run/build/MavericksRun/PYZ-00.pyz',
+   'PYZ'),
+  ('lib-dynload/_struct',
+   '/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload/_struct.cpython-39-darwin.so',
+   'EXTENSION'),
+  ('lib-dynload/zlib',
+   '/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/lib-dynload/zlib.cpython-39-darwin.so',
+   'EXTENSION'),
+  ('struct',
+   '/Library/Frameworks/Python.framework/Versions/3.9/lib/python3.9/struct.pyo',
+   'PYMODULE'),
+  ('pyimod01_os_path',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/loader/pyimod01_os_path.pyc',
+   'PYMODULE'),
+  ('pyimod02_archive',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/loader/pyimod02_archive.pyc',
+   'PYMODULE'),
+  ('pyimod03_importers',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/loader/pyimod03_importers.pyc',
+   'PYMODULE'),
+  ('pyimod04_ctypes',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/loader/pyimod04_ctypes.pyc',
+   'PYMODULE'),
+  ('pyiboot01_bootstrap',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/loader/pyiboot01_bootstrap.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgutil',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgutil.py',
+   'PYSOURCE'),
+  ('pyi_rth_multiprocessing',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/hooks/rthooks/pyi_rth_multiprocessing.py',
+   'PYSOURCE'),
+  ('pyi_rth_inspect',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/hooks/rthooks/pyi_rth_inspect.py',
+   'PYSOURCE'),
+  ('pyi_rth_pkgres',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/hooks/rthooks/pyi_rth_pkgres.py',
+   'PYSOURCE'),
+  ('pyi_rth__tkinter',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/hooks/rthooks/pyi_rth__tkinter.py',
+   'PYSOURCE'),
+  ('MavericksRun',
+   '/Users/cfisher/Desktop/ITIN 8000 FA2021/ITIN 8000 FA21 - '
+   'GitHub/ITIIN-8000-Assignments---Charles-Fisher/Class Project '
+   'FA2021/PythonArcade - Mavericks Run/MavericksRun.py',
+   'PYSOURCE')],
+ [],
+ False,
+ False,
+ 1638750130,
+ [('run',
+   '/Users/cfisher/Documents/GitHub/ITIN8000_FA21/Python Tiled '
+   'Game/lib/python3.9/site-packages/PyInstaller/bootloader/Darwin-64bit/run',
+   'EXECUTABLE')])
