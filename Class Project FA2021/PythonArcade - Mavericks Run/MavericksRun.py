@@ -381,10 +381,12 @@ class GameView(arcade.View):
         self.coin.center_y = self.target_y
         self.scene.add_sprite("Coins", self.coin)
 
+        """
         self.coin2 = arcade.Sprite(":resources:images/items/coinGold.png", COIN_SCALING)
         self.coin2.center_x = 9645
         self.coin2.center_y = 6759
         self.scene.add_sprite("Coins", self.coin2)
+        """ # a test coin
 
         # Setup Initial Player Location Tracker
         # This used to not trigger until first update,
