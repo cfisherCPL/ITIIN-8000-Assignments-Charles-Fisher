@@ -29,6 +29,7 @@ UPDATES_PER_FRAME = 5
 
 # Constants used to track if the player is facing left or right
 # Use later for animated sprites. 11-29-21
+# Animated player sprites long-listed for class presentation 12-5-21
 RIGHT_FACING = 0
 LEFT_FACING = 1
 
