@@ -4,6 +4,80 @@ import math
 import random
 import time
 
+# How long should we wait idle before doing something like switching the view?
+IDLE_TIME = 30.0
+
+# Constants
+SCREEN_WIDTH = 1280
+SCREEN_HEIGHT = 720
+SCREEN_TITLE = "TiledGame"
+
+# How many pixels to keep as a minimum margin between the character
+# and the edge of the screen.
+# Used  for scrolling margin camera.
+VIEWPORT_MARGIN_HORZ = 600
+VIEWPORT_MARGIN_VERT = 350
+
+# How fast the camera pans to the player. 1.0 is instant.
+# Used later for scrolling margin camera. Need to get workings 11-29-21
+CAMERA_SPEED = 0.1
+
+# Movement speed of player, in pixels per frame
+# Updates per frame for sprite animations
+MOVEMENT_SPEED = 10
+UPDATES_PER_FRAME = 5
+
+# Constants used to track if the player is facing left or right
+# Use later for animated sprites. 11-29-21
+RIGHT_FACING = 0
+LEFT_FACING = 1
+
+# Constants used to scale our sprites from their original size
+CHARACTER_SCALING = 0.45
+TILE_SCALING = 2.5
+COIN_SCALING = 0.5
+SPRITE_PIXEL_SIZE = 16
+GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
+
+# A Dict of all potential starting locations
+# Key used as int to pull from rand_int later
+# Store the name, x coord, and y coord
+SPAWN_LOCATIONS = {
+    "0": ["BellTower", 9515, 6970],
+    "1": ["LibraryLot", 7745, 6677],
+    "2": ["DurhamLot", 8935, 7848],
+    "3": ["WestFacLotFar", 2975, 7668],
+    "4": ["WestFacLotNear", 4335, 5688],
+    "5": ["WestGarage", 1635, 4849],
+    "6": ["MavVillage", 2405, 3529],
+    "7": ["UniversityVillage", 6145, 5089],
+    "8": ["H&KLot", 10005, 4837],
+    "9": ["AlineCPACLot", 11575, 5769],
+    "10": ["EppleyLot", 14457, 8077],
+    "11": ["NECornerLot", 17415, 8937],
+    "12": ["AshLot", 17735, 6207],
+    "13": ["EastGarage", 16705, 5327],
+    "14": ["BioMechLot", 13293, 2619],
+    }
+
+
+# Target locations on map to be used for compass
+TARGET_LOCATIONS = {
+    "0": ["Library 2nd Floor", 8215, 7107],
+    "1": ["Biomechanics", 13465, 2476],
+    "2": ["Milo Bail Student Center", 12655, 7107],
+    "3": ["CPACS", 11115, 6829],
+    "4": ["Allwine", 12265, 6529],
+    "5": ["Music - Strauss PAC ", 10585, 7359],
+    "6": ["Weber North Entry", 6523, 7029],
+    "7": ["Durham South Entry", 5503, 7387],
+    "8": ["Sculpture and Ceramic Studio", 9055, 4879],
+    }
+
+# Layer Names from our TileMap
+LAYER_NAME_BOUNDS = "Buildings"
+LAYER_NAME_FOREGROUND = "ForeGround"
+
 # MiniMap and Constants deprecated for performance 12-5-21
 """
 # Constants for MiniMap
