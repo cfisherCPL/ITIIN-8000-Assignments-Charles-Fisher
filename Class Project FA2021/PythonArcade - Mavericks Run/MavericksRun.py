@@ -43,34 +43,34 @@ GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 # Key used as int to pull from rand_int later
 # Store the name, x coord, and y coord
 SPAWN_LOCATIONS = {
-    "0": ["BellTower", 9515, 6970],
-    "1": ["LibraryLot", 7745, 6677],
-    "2": ["DurhamLot", 8935, 7848],
-    "3": ["WestFacLotFar", 2975, 7668],
-    "4": ["WestFacLotNear", 4335, 5688],
-    "5": ["WestGarage", 1635, 4849],
-    "6": ["MavVillage", 2405, 3529],
-    "7": ["UniversityVillage", 6145, 5089],
-    "8": ["H&KLot", 10005, 4837],
-    "9": ["AlineCPACLot", 11575, 5769],
-    "10": ["EppleyLot", 14457, 8077],
-    "11": ["NECornerLot", 17415, 8937],
-    "12": ["AshLot", 17735, 6207],
-    "13": ["EastGarage", 16705, 5327],
-    "14": ["BioMechLot", 13293, 2619],
+    "0": ["Bell Tower", 9515, 6970],
+    "1": ["Library Parking Lot", 7745, 6677],
+    "2": ["Durham Parking Lot", 8935, 7848],
+    "3": ["West Faculty Lot Far", 2975, 7668],
+    "4": ["West Faculty Lot Near", 4335, 5688],
+    "5": ["West Garage", 1635, 4849],
+    "6": ["Mav Village", 2405, 3529],
+    "7": ["University Village", 6145, 5089],
+    "8": ["H&K Parking Lot", 10005, 4837],
+    "9": ["CPAC Faculty Lot", 11575, 5769],
+    "10": ["Eppley Guest Lot", 14457, 8077],
+    "11": ["Dodge St NE Parking Lot", 17415, 8937],
+    "12": ["ASH Side Lot", 17735, 6207],
+    "13": ["East Garage", 16705, 5327],
+    "14": ["Biomechanics Parking Lot", 13293, 2619],
     }
 
 
 # Target locations on map to be used for compass
 TARGET_LOCATIONS = {
     "0": ["Library 2nd Floor", 8215, 7107],
-    "1": ["Biomechanics", 13465, 2476],
-    "2": ["Milo Bail Student Center", 12655, 7107],
-    "3": ["CPACS", 11115, 6829],
-    "4": ["Allwine", 12265, 6529],
-    "5": ["Music - Strauss PAC ", 10585, 7359],
-    "6": ["Weber North Entry", 6523, 7029],
-    "7": ["Durham South Entry", 5503, 7387],
+    "1": ["Biomechanics West Entry", 13465, 2476],
+    "2": ["Milo Bail Student Center South Entry", 12655, 7107],
+    "3": ["CPACS North Entry", 11115, 6829],
+    "4": ["Allwine Hall West Entry", 12265, 6529],
+    "5": ["Strauss PAC Main Entry ", 10585, 7359],
+    "6": ["Weber Fine Arts North Entry", 6523, 7029],
+    "7": ["Durham Science South Entry", 5503, 7387],
     "8": ["Sculpture and Ceramic Studio", 9055, 4879],
     }
 
