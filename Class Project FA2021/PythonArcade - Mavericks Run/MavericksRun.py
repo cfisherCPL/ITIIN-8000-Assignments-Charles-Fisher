@@ -4,10 +4,6 @@ import math
 import random
 import time
 
-
-
-
-
 # MiniMap and Constants deprecated for performance 12-5-21
 """
 # Constants for MiniMap
@@ -382,7 +378,6 @@ class GameView(arcade.View):
         self.target_name = target_dict_pull[0]
         self.target_x = target_dict_pull[1]
         self.target_y = target_dict_pull[2]
-
 
     # Minimap is cool, but blocks viewport too much
     # and wasn't helping gameplay.
