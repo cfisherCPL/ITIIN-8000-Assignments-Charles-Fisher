@@ -44,35 +44,64 @@ GRID_PIXEL_SIZE = SPRITE_PIXEL_SIZE * TILE_SCALING
 # Key used as int to pull from rand_int later
 # Store the name, x coord, and y coord
 SPAWN_LOCATIONS = {
-    "0": ["Bell Tower", 9515, 6970],
-    "1": ["Library Parking Lot", 7745, 6677],
-    "2": ["Durham Parking Lot", 8935, 7848],
-    "3": ["West Faculty Lot Far", 2975, 7668],
-    "4": ["West Faculty Lot Near", 4335, 5688],
-    "5": ["West Garage", 1635, 4849],
-    "6": ["Mav Village", 2405, 3529],
-    "7": ["University Village", 6145, 5089],
-    "8": ["H&K Parking Lot", 10005, 4837],
-    "9": ["CPAC Faculty Lot", 11575, 5769],
-    "10": ["Eppley Guest Lot", 14457, 8077],
-    "11": ["Dodge St NE Parking Lot", 17415, 8937],
-    "12": ["ASH Side Lot", 17735, 6207],
-    "13": ["East Garage", 16705, 5327],
-    "14": ["Biomechanics Parking Lot", 13293, 2619],
+    "0": ["Child Care Lot", 2659, 7014], #
+    "1": ["Library Parking Lot", 8534, 6819],
+    "2": ["Durham Parking Lot North", 5873, 9904],
+    "3": ["West Faculty Lot", 5268, 7654],
+    "4": ["West Student Lot", 3903, 7704],
+    "5": ["West Garage North", 3439, 5839],
+    "6": ["Mav Village", 4239, 4349],
+    "7": ["University Village", 7232, 3824],
+    "8": ["H&K Surface Lot", 11219, 5469],
+    "9": ["CPACS Faculty Lot", 12279, 6917],
+    "10": ["Eppley Guest Lot", 15552, 9214],
+    "11": ["Dodge St NE Parking Lot", 18572, 9984],
+    "12": ["ASH Faculty Lot", 18509, 7739],
+    "13": ["East Garage North", 17667, 6224],
+    "14": ["CEC Guest Lot", 9934, 9079],
+    "15": ["Strauss Faculty Lot", 11294, 9079],
+    "16": ["Dodge St Orbit Stop", 14502, 10304],
+    "17": ["Elmwood Access Road", 20429, 6139],
+    "18": ["East Garage South", 17407, 3929],
+    "19": ["West Garage South", 3234, 4634],
+    "20": ["Elmwood 4way Stop", 16029, 1919],
+    "21": ["Sculpture Delivery Lot", 10139, 5479],
+    "22": ["Weber 'Rockstar' Lot", 6289, 6670],
+    "23": ["Dodge St West Crosswalk", 3382, 10304],
     }
 
 
 # Target locations on map to be used for compass
 TARGET_LOCATIONS = {
-    "0": ["Library 2nd Floor", 8215, 7107],
-    "1": ["Biomechanics West Entry", 13465, 2476],
-    "2": ["Milo Bail Student Center South Entry", 12655, 7107],
-    "3": ["CPACS North Entry", 11115, 6829],
-    "4": ["Allwine Hall West Entry", 12265, 6529],
-    "5": ["Strauss PAC Main Entry ", 10585, 7359],
-    "6": ["Weber Fine Arts North Entry", 6523, 7029],
-    "7": ["Durham Science South Entry", 5503, 7387],
-    "8": ["Sculpture and Ceramic Studio", 9055, 4879],
+    "0": ["Library 2nd Floor", 9204, 8104],
+    "1": ["Library 1st Floor", 9092, 7824],
+    "2": ["Castle of Perseverence", 7712, 8264],
+    "3": ["Weber Fine Arts North", 7452, 8029],
+    "4": ["Durham Science South", 6579, 8384],
+    "5": ["Gerontology Building", 6059, 7354],
+    "6": ["Sculpture and Ceramic Studio", 100059, 5884],
+    "7": ["H&K Main Entry", 12399, 5244],
+    "8": ["Biomechanics West Entry", 14462, 3454],
+    "9": ["Soccer Field Stands", 14522, 5844],
+    "10": ["Pep Bowl", 15582, 7737],
+    "11": ["Roskens South Entry", 16612, 8374],
+    "12": ["Kayser West Entry", 18357, 8624],
+    "13": ["ASH Main Entry", 17572, 7469],
+    "14": ["Shakespeare Green", 8199, 5114],
+    "15": ["Childcare Center", 2139, 6814],
+    "16": ["Alumni Center", 2489, 9727],
+    "17": ["Belltower Campanile", 10674, 7974],
+    "18": ["CEC North Entry", 10267, 7509],
+    "19": ["CPACS North Entry", 12087, 7829],
+    "20": ["Strauss Music PAC Main Entry", 11847, 8384],
+    "21": ["Milo Bail South Main Entry", 13637, 8104],
+    "22": ["Allwine Hall West Entry", 13262, 7684],
+    "23": ["Eppley Admin South Entry", 15652, 8384],
+    "24": ["Allwine Greenhouse", 13579, 6534],
+    "25": ["Sapp Fieldhouse Corner Entry", 12539, 6194],
+    "26": ["Weber Fine Arts Dock", 7619, 7614],
+    "27": ["Durham Science North Entry", 6397, 8974],
+
     }
 
 # Layer Names from our TileMap
@@ -406,11 +435,13 @@ class GameView(arcade.View):
         self.arrow_sprite.angle = 0
 
         # Create the 'physics engine'
+        # This is what allows the player sprite to move around
+        # with correct speed and at angles
         self.physics_engine = arcade.PhysicsEngineSimple(
             self.player_sprite, self.scene.get_sprite_list(LAYER_NAME_BOUNDS)
         )
 
-        # Start the timer
+        # Prime the timer
         self.total_time = 0.0
 
         # Set the viewport boundaries
@@ -442,14 +473,14 @@ class GameView(arcade.View):
         # Player starting position
         # X and Y are pulled from dict above
         # Random target position using same method
-        rand_spawn = random.randint(0, 14)  # if more locations later, add higher second number
+        rand_spawn = random.randint(0, 23)  # if more locations later, add higher second number
         rand_spawn = str(rand_spawn)
         spawn_dict_pull = SPAWN_LOCATIONS.get(rand_spawn)
         self.spawn_location = spawn_dict_pull[0]
         self.player_start_x = spawn_dict_pull[1]
         self.player_start_y = spawn_dict_pull[2]
 
-        rand_target = random.randint(0, 8)
+        rand_target = random.randint(0, 27)
         rand_target = str(rand_target)
         target_dict_pull = TARGET_LOCATIONS.get(rand_target)
         self.target_name = target_dict_pull[0]
