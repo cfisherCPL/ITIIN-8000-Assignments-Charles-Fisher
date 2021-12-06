@@ -5,7 +5,7 @@ import random
 import time
 
 # How long should we wait idle before doing something like switching the view?
-IDLE_TIME = 30.0
+IDLE_TIME = 120.0
 
 # Constants
 SCREEN_WIDTH = 1280
