@@ -320,8 +320,10 @@ class GameView(arcade.View):
         # Location storage for position ID
         self.location = None
 
-        # Prep the location name to show on gui
-        self.target_locale =None
+        # Prep the spawn and start location name to show on gui
+        self.target_locale = None
+        self.spawn_locale = None
+
 
         # Don't show the mouse cursor
         self.window.set_mouse_visible(False)
@@ -463,6 +465,7 @@ class GameView(arcade.View):
         """
 
         # Create the target location announcement on-screen
+        self.spawn_locale = "You started at " + self.spawn_location
         self.target_locale = "Go to " + self.target_name
 
     def random_spawn_and_target(self):
@@ -526,6 +529,8 @@ class GameView(arcade.View):
         self.player_sprite.center_x = self.player_start_x
         self.player_sprite.center_y = self.player_start_y
         self.target_locale = "Go to " + self.target_name
+        self.spawn_locale = "You started at" + self.spawn_location
+
         self.total_time = 0.0
 
     # Direction lookup returns an angle value to be used
@@ -583,6 +588,12 @@ class GameView(arcade.View):
 
         # Display the target location name.
         arcade.draw_text(self.target_locale,
+                         SCREEN_WIDTH // 2, 50,
+                         arcade.color.WHITE, 30,
+                         anchor_x="center")
+
+        # Display the start location name
+        arcade.draw_text(self.spawn_locale,
                          SCREEN_WIDTH // 2, 100,
                          arcade.color.WHITE, 30,
                          anchor_x="center")
