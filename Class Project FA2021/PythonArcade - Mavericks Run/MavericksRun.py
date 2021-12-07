@@ -5,9 +5,11 @@ import random
 import time
 
 # How long should we wait idle before doing something like switching the view?
+# 120sec (2min) is good for the arcade, and allows for map-load at beginning without error 12-6-21
 IDLE_TIME = 120.0
 
-# Constants
+# Constants for how big the screen should be
+# Turn on fullscreen=true later for the arcade
 SCREEN_WIDTH = 1280
 SCREEN_HEIGHT = 720
 SCREEN_TITLE = "TiledGame"
@@ -19,7 +21,7 @@ VIEWPORT_MARGIN_HORZ = 600
 VIEWPORT_MARGIN_VERT = 350
 
 # How fast the camera pans to the player. 1.0 is instant.
-# Used later for scrolling margin camera. Need to get workings 11-29-21
+# Used later for scrolling margin camera.
 CAMERA_SPEED = 0.1
 
 # Movement speed of player, in pixels per frame
@@ -101,10 +103,10 @@ TARGET_LOCATIONS = {
     "25": ["Sapp Fieldhouse Corner Entry", 12539, 6194],
     "26": ["Weber Fine Arts Dock", 7619, 7614],
     "27": ["Durham Science North Entry", 6397, 8974],
-
     }
 
 # Layer Names from our TileMap
+# Used later for defining collision and lay-over layer
 LAYER_NAME_BOUNDS = "Buildings"
 LAYER_NAME_FOREGROUND = "ForeGround"
 
